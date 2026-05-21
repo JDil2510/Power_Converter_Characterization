@@ -1,1 +1,29 @@
+# DC-DC Converter Characterization Test Plan
 
+## Objective
+
+Characterize a commercial buck converter through
+- Regulation
+- Ripple
+- Efficiency
+- Switching behavior
+
+## Equipment
+
+## Safety Considerations
+
+## Test Procedures
+
+### Test 1: Scope Verification
+
+### Test 2: Noise Floor Characterization
+
+### Test 3: Output Voltage Regulation
+
+### Test 4: Ripple Measurement
+
+### Test 5: Switching Frequency
+
+## Data Recording Format
+
+## Expected Results
