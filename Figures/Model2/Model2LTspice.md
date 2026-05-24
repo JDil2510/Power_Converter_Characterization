@@ -19,7 +19,7 @@ By beginning with an idealized switching element, the behavior of the power stag
 
 ## Circuit Description
 
-![Model 1 LTspice Schematic](Model1LTspice.png)
+![Model 1 LTspice Schematic](Model2LTspice.png)
 
 ### Figure 1. LTspice implementation of the Model 1 ideal buck converter.
 
