@@ -1,4 +1,4 @@
-## Stage 1: Non-Ideal Open-Loop Buck Simulation
+## Stage 1: Non-Ideal Open-Loop Buck Simulation (05/23/2026)
 
 A simplified asynchronous buck converter was simulated at Vin = 12 V, target Vout = 3 V, and load current near 3 A. Initial ideal-duty operation produced output voltage below the 3 V target once diode drop, switch resistance, and passive losses were included. Increasing duty cycle restored the output closer to the desired operating point.
 
