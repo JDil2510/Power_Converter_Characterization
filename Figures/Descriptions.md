@@ -15,7 +15,7 @@
 
 ### Figure X. Steady-State Converter Operation
 
-![Steady-State Waveforms](Figures/zoomed_waveforms_stacked_subplots.png)
+![Steady-State Waveforms](zoomed_waveforms_stacked_subplots.png)
 
 The figure shows the steady-state behavior of the reconstructed LM2596 adjustable buck converter model operating from a 12 V input supply while delivering approximately 3 A to the load. The displayed time window spans from 4.8 ms to 5.0 ms, well after startup transients have settled.
 
