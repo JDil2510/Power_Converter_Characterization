@@ -17,7 +17,7 @@ The following sections examine the major functional blocks of the LM2596 and dis
 
 ## Question 1: How Does the LM2596 Determine Duty Cycle?
 
-![LM2596 Internal Functional Block Diagram](Figures/LM2596_Block_Diagram.png)
+![LM2596 Internal Functional Block Diagram](../Figures/LM2596_Block_Diagram.png)
 
 **Figure X. Internal functional block diagram of the LM2596 adjustable regulator.**
 
