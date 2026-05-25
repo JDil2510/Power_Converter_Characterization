@@ -1,6 +1,6 @@
 ## Steady-State Waveform Analysis
 
-![Steady-State Waveforms](steady_state_waveforms.png)
+![Steady-State Waveforms](zoomed_waveforms_stacked_subplots.png)
 
 **Figure X. Steady-state operation of the reconstructed LM2596 adjustable buck converter model under a 12 V input and approximately 3 A load condition.**
 
