@@ -1,7 +1,5 @@
 # Model 2b (SS3P5) Load Current Sweep
 
-![Model 2b LTspice Schematic](../Figures/Model2b/Model2bLTspice.png)
-
 ## Objective
 
 The purpose of this simulation was to evaluate the performance of the Stage 2b LM2596 converter model over a range of load currents while using an SS3P5 Schottky diode as a substitute for the SS34 diode installed on the physical converter module.
