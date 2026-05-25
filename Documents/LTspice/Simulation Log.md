@@ -60,9 +60,9 @@ The reconstructed feedback network uses a 10 kΩ upper feedback resistance and a
 
 The expected output voltage is:
 
-\[
+$$
 V_{OUT} = 1.23 \left(1 + \frac{R_{TOP}}{R_{BOTTOM}}\right)
-\]
+$$
 
 Using:
 
@@ -73,13 +73,9 @@ RBOTTOM = 7.5 kΩ
 
 gives:
 
-\[
-V_{OUT}
-=
-1.23\left(1+\frac{10k}{7.5k}\right)
-=
-2.87V
-\]
+$$
+V_{OUT} = 1.23\left(1+\frac{10\text{k}}{7.5\text{k}}\right) = 2.87\ \text{V}
+$$
 
 This matches the simulated output average closely.
 
@@ -163,13 +159,9 @@ This is the strongest indication that the converter is regulating correctly.
 
 The simulated output voltage closely matches the value predicted by the estimated feedback network:
 
-\[
-V_{OUT}
-=
-1.23\left(1+\frac{10k}{7.5k}\right)
-=
-2.87V
-\]
+$$
+V_{OUT} = 1.23\left(1+\frac{10\text{k}}{7.5\text{k}}\right) = 2.87\ \text{V}
+$$
 
 The agreement between theory and simulation suggests that the estimated resistor values are plausible representations of the actual module's feedback network.
 
