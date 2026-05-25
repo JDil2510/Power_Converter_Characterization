@@ -204,3 +204,90 @@ The following measurements will be performed on the physical LM2596 module:
 7. Estimate inductor current ripple and compare against simulation predictions.
 
 These measurements will be used to produce a final hardware-correlated LM2596 model.
+
+# Stage 2b: Schottky Diode Model Refinement (05/25/2026)
+
+## Objective
+
+The purpose of Stage 2b is to improve the fidelity of the LM2596 converter model by incorporating a Schottky diode model that more closely resembles the diode used on the physical converter module.
+
+The previous Stage 2 model utilized a 1N582x-family Schottky diode model obtained from an external reference design. While this model provided reasonable switching behavior and enabled development of the feedback-controlled converter model, it does not correspond to the diode installed on the physical hardware.
+
+Inspection of the LM2596 module revealed that the converter uses an SS34 surface-mount Schottky rectifier. Because an SS34 SPICE model was not immediately available, the existing diode model was replaced with an LTspice-native SS3P5 Schottky diode model. Both devices are rated for approximately 3 A operation and are intended for switching power supply applications, making the SS3P5 a reasonable first-order substitute.
+
+---
+
+## Model Changes
+
+The Stage 2b model is identical to the Stage 2 model with the exception of the freewheeling diode.
+
+| Component | Stage 2 | Stage 2b |
+|------------|------------|------------|
+| Freewheeling Diode | 1N582x | SS3P5 |
+| LM2596 Model | Same | Same |
+| Feedback Network | Same | Same |
+| Input Voltage | Same | Same |
+| Inductor | Same | Same |
+| Output Capacitor | Same | Same |
+
+No modifications were made to the control loop, feedback divider, compensation network, load model, or simulation methodology.
+
+---
+
+## Motivation
+
+The Schottky diode conducts the inductor current during every switch-off interval and therefore contributes directly to:
+
+- Converter efficiency
+- Power dissipation
+- Thermal performance
+- Switching-node behavior
+- Inductor current decay rate
+
+Although both the 1N582x and SS3P5 are Schottky rectifiers, differences in forward voltage drop, junction capacitance, and reverse-recovery behavior can influence converter performance. Replacing the diode model therefore provides a more realistic estimate of the behavior expected from the physical hardware.
+
+---
+
+## Load Current Sweep
+
+A load-current sweep was performed to evaluate converter performance over a range of operating conditions. The load current was varied from 0.25 A to 3.0 A while maintaining:
+
+- Input Voltage: 12 V
+- Target Output Voltage: 3 V
+- Inductor: 47 µH
+- Output Capacitor: 220 µF
+- Schottky Diode: SS3P5
+
+For each load condition, steady-state measurements were collected from the simulation, including:
+
+- Average output voltage
+- Output voltage ripple
+- Average inductor current
+- Inductor current ripple
+- Input power
+- Output power
+- Estimated efficiency
+
+The objective of the sweep was not to establish final performance specifications, but rather to evaluate operating trends and identify regions of discontinuous and continuous conduction.
+
+---
+
+## Initial Observations
+
+The simulation results indicate that the converter operates primarily in Discontinuous Conduction Mode (DCM) at lighter load currents. As load current increases, the minimum inductor current approaches a positive value and the converter transitions into Continuous Conduction Mode (CCM).
+
+The output voltage remained relatively stable throughout the sweep despite variations in load current, demonstrating that the control loop maintained regulation under all simulated operating conditions.
+
+Efficiency estimates generated from the simulation should be interpreted cautiously because the SS3P5 remains a substitute for the physical SS34 diode. However, the results provide a useful baseline for future comparison once an SS34-specific SPICE model is incorporated.
+
+---
+
+## Scope and Limitations
+
+Stage 2b should be viewed as an intermediate refinement rather than a final hardware-accurate model.
+
+The physical converter utilizes an SS34 Schottky diode, while the simulation currently uses an SS3P5 substitute. As a result, efficiency and thermal predictions should be treated as approximate until an SS34-specific model is incorporated.
+
+The primary objective of this stage is to evaluate trends in converter operation across load current rather than establish final performance metrics.
+
+Future work will focus on obtaining or developing an SS34 SPICE model and comparing its behavior against the SS3P5 results to determine the sensitivity of converter performance to diode selection.
