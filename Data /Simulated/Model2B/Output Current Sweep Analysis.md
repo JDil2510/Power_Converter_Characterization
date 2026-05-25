@@ -1,6 +1,6 @@
 # Model 2b (SS3P5) Load Current Sweep
 
-![Model 2b LTspice Schematic](Model2bLTspice.png)
+![Model 2b LTspice Schematic](../Figures/Model2b/Model2bLTspice.png)
 
 ## Objective
 
